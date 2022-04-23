@@ -7,11 +7,11 @@
         return (
             '<tr><td>'
             + item.title
-            + '</td><td>'
+            + '</td><td class="text-center">'
             + item.quantity
-            + '</td><td>'
+            + '</td><td class="text-center"> $'
             + item.price
-            + '</td><td>'
+            + '</td><td class="text-center">'
             + item.categories
             + '</td></tr>'
         );
