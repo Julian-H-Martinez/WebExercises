@@ -8,61 +8,61 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<header class="container text-center">
+    <h1>My Tool Store</h1>
+</header>
+<main class="container">
+    <table id="products" class="table table-hover table-striped">
+        <thead>
+        <tr class="text-center">
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+    <h3>Add Item</h3>
+<!--ITEM NAME-->
+    <div class="mb-3 row">
+        <label for="itemName" class="col-sm-2 col-form-label">Item: </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="itemName">
+        </div>
+    </div>
+<!--ITEM QUANTITY-->
+    <div class="mb-3 row">
+        <label for="itemQuantity" class="col-sm-2 col-form-label">Quantity: </label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="itemQuantity">
+        </div>
+    </div>
+<!--ITEM PRICE-->
+    <div class="mb-3 row">
+        <label for="itemPrice" class="col-sm-2 col-form-label">Price Per: </label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="itemPrice">
+        </div>
+    </div>
+<!--ITEM CATEGORIES-->
+    <div class="mb-3 row">
+        <label for="itemCategories" class="col-sm-2 col-form-label">Categories: </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="itemCategories">
+        </div>
+    </div>
+    <button id="refresh">Refresh Inventory</button>
+</main>
 
-<h1>My Tool Store</h1>
 
-<table id="products">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Categories</th>
-    </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
 
+
+<!--SCRIPTS-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script>
-    (function() {
-        "use strict";
-        // TODO: Create an AJAX GET request for the file under data/inventory.json
-        const storeItems = $.ajax("data/inventory.json");
-
-        function showItem(item){
-            return (
-                '<tr><td>'
-                + item.title
-                + '</td><td>'
-                + item.quantity
-                + '</td><td>'
-                + item.price
-                + '</td><td>'
-                + item.categories
-                + '</td></tr>'
-            );
-        }
-
-        function onSuccess(data){
-            let displayItem = '';
-            data.forEach(function(item){
-                displayItem += showItem(item);
-            })
-            $('#insertProducts').append(displayItem);
-        }
-
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
-
-        storeItems.done(onSuccess);
-    })();
-</script>
-
+<script src="js/ajaxStore.js"></script>
 </body>
 </html>
