@@ -3,6 +3,8 @@
 
     const storeItems = $.ajax("data/inventory.json");
 
+    // storeItems.done(onSuccess);
+
     function showItem(item){
         return (
             '<tr><td>'
@@ -25,5 +27,13 @@
         $('#insertProducts').append(displayItem);
     }
 
-    storeItems.done(onSuccess);
+    function getInventory(){
+        storeItems
+            .done(onSuccess)
+    }
+
+    $('#refresh').click(function(e){
+        e.preventDefault();
+        getInventory();
+    });
 })();
