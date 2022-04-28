@@ -2,31 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// class Square extends React.Component {
-//     // TODO: remove the constructor
-//     // constructor(props) {
-//     //     super(props);
-//     //     this.state={
-//     //         value: null,
-//     //     };
-//     // }
-//     render() {
-//         // TODO: use onClick={this.props.onClick}
-//         // TODO: replace this.state.value with this.props.value
-//         return (
-//             <button
-//                 className="square"
-//                 onClick = {() => this.props.onClick()}
-//                 // onClick = {() => this.setState({value:'X'})}
-//             >
-//                 {/* TODO */}
-//                 {this.props.value}
-//                 {/*{this.state.value}*/}
-//             </button>
-//         );
-//     }
-// }
-
 //  TODO: replace Square class to be a function
 function Square(props){
     return (
@@ -108,6 +83,17 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+    //  TODO: set up initial state for Game component within its constructor
+    constructor(props) {
+        super(props);
+        this.state = {
+            history: [{
+                squares: Array(9).fill(null),
+            }],
+            xIsNext: true,
+        };
+    }
+
     render() {
         return (
             <div className="game">
@@ -122,14 +108,6 @@ class Game extends React.Component {
         );
     }
 }
-
-// ========================================
-
-ReactDOM.render(
-    <Game />,
-    document.getElementById('root')
-);
-
 
 //  =======================================
 function calculateWinner(squares){
@@ -151,3 +129,8 @@ function calculateWinner(squares){
     }
     return null;
 }
+
+ReactDOM.render(
+    <Game />,
+    document.getElementById('root')
+);
