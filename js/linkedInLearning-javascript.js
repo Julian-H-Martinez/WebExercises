@@ -144,3 +144,81 @@ all will work but what's more readable?
 //     'day' : 5,
 //     'holiday' : 'Cinco de Mayo'
 // };
+
+/* ---REGULAR EXPRESSIONS (REGEX)--- */
+/*
+SEARCHING TEXT FOR PATTERNS
+LOOKING FOR A PARTICULAR SOMETHING BUT NOT AN EXACT SOMETHING
+ALLOWS YOU TO DESCRIBE SOMETHING YOU ARE LOOKING FOR IN AN ABSTRACT WAY
+IS A DATATYPE LIKE NUMBERS, STRINGS, OBJECTS, ETC
+ALLOWS YOU TO CHECK FOR A WORD OR BLOCK OF TEXT QUICKLY
+MODIFIERS AVAILABLE TO CHANGE HOW REGEX WORKS
+
+ */
+
+var string1 = 'This is the longest string ever.';
+var string2 = 'This is the shortest string ever.';
+var string3 = 'Is this the thing called Mount Everest?';
+var string4 = 'This is the Sherman on the Mount.';
+
+//  this IS REGULAR EXPRESSION LITERAL
+//  WILL SEARCH FOR 'this' WHEN CALLED AND TESTED
+// var regex = /this/;
+
+//  ADDING SOMETHING TO END OF REGULAR EXPRESSION (AFTER SLASH) IS CALLED A FLAG
+//  i STANDS FOR caseInsensitive
+// var regex = /this/i;
+//  ^ CHECKS BEGINNING OF STRING IF PRESENT
+// var regex = /^this/i;
+//  TO CHECK END OF STRING ADD $ TO END OF REGULAR EXPRESSION BEFORE LAST /
+// var regex = /this$/i;
+//  . CHECKS REGEX WITH ANY CHARACTER AT END
+// var regex = /ever.$/i;
+//  TO CHECK FOR A LITERAL DOT YOU NEED TO \ ESCAPE THE DOT
+var regex = /ever\.$/i;
+
+//  .test method to test regex of string for pattern set with variable regex
+console.log(regex.test(string1));
+console.log(regex.test(string2));
+console.log(regex.test(string3));
+console.log(regex.test(string4));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
