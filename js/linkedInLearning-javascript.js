@@ -94,8 +94,6 @@ var arrayOfStuff = [
 // console.log(arrayOfStuff[0].name);
 
 /* ---ARRAYS_MANIPULATING--- */
-// console.log(counties[0]);
-// console.log(counties[2]);
 
 /*
 push() and pop() work with the end of an array
@@ -105,27 +103,44 @@ splice() allows you to work with items in middle of array
 
 /* - changing item in array - */
 counties[2] = "Hays";
-// console.log(counties[2]);
 
 /* - adding item to end of array - */
 counties[4] = "Comal";
-// console.log(counties);
 counties[counties.length] = "Travis";
-// console.log(counties);
 counties.push("Bell");
-// console.log(counties);
 
 /* - removing an item from end of array - */
-console.log(counties.pop());
-// console.log(counties);
+// console.log(counties.pop());
 
 /* - removing an item from middle of array - */
 //  delete would only remove item but array.length would remain the same
 delete counties[2];
-console.log(counties);
 //  splice allows you to remove completely items from anywhere within the array
 //  takes in 2 parameters -
 //  (1) which index in array you want to do the operation to
 //  (2) number of items wanting to remove
-console.log(counties.splice(2, 1));
-console.log(counties);
+// console.log(counties.splice(2, 1));
+
+/* ---READABILITY: WHITESPACE--- */
+/*
+whitespace is ignored by js
+all will work but what's more readable?
+ */
+//  NO SPACE
+// var year=2022, month='May', day=5, holiday='Cindo de Mayo';
+//  WITH SPACE
+// var year    = 2022,     month   =   'May', day =    5,          holiday='Cinco de Mayo';
+//  SEPARATE LINES
+// var year = 2022,
+//     month = 'May',
+//     day = 5,
+//     holiday = 'Cinco de Mayo';
+//  NO SPACE OBJECT
+// var tinyAlmanac={'year':2022,'month':'May','day':5,'holiday':'Cinco de Mayo'};
+//  SEPARATE LINES OBJECT
+// var tinyAlmanac = {
+//     'year' : 2022,
+//     'month' : 'May',
+//     'day' : 5,
+//     'holiday' : 'Cinco de Mayo'
+// };
