@@ -54,7 +54,8 @@ animal2 = JSON.parse(JSON.stringify(animal));
 /*
 ARRAYS PRESERVES ORDER THAT IT'S BEEN ARRANGED AS
 ARRAYS HAVE KEYS THAT ARE NOT DISPLAYED (INDEX) AND
-AUTOMATICALLY ASSIGNED STARTING AT 0
+ AUTOMATICALLY ASSIGNED STARTING AT 0
+ HENCE WHY ARRAYS ARE CALLED 0 INDEXED
 "SECRETLY" AN ARRAY IS AN OBJECT WITH SPECIAL TREATMENT
 ARRAYS CAN BE CREATED WITH ANY KIND OF DATA
 ARRAYS OFTEN USED FOR LISTS
@@ -91,3 +92,40 @@ var arrayOfStuff = [
 // console.log(arrayOfStuff.length);
 // console.log(arrayOfStuff[1][2]);
 // console.log(arrayOfStuff[0].name);
+
+/* ---ARRAYS_MANIPULATING--- */
+// console.log(counties[0]);
+// console.log(counties[2]);
+
+/*
+push() and pop() work with the end of an array
+shift() and unshift() work with the beginning of an array
+splice() allows you to work with items in middle of array
+ */
+
+/* - changing item in array - */
+counties[2] = "Hays";
+// console.log(counties[2]);
+
+/* - adding item to end of array - */
+counties[4] = "Comal";
+// console.log(counties);
+counties[counties.length] = "Travis";
+// console.log(counties);
+counties.push("Bell");
+// console.log(counties);
+
+/* - removing an item from end of array - */
+console.log(counties.pop());
+// console.log(counties);
+
+/* - removing an item from middle of array - */
+//  delete would only remove item but array.length would remain the same
+delete counties[2];
+console.log(counties);
+//  splice allows you to remove completely items from anywhere within the array
+//  takes in 2 parameters -
+//  (1) which index in array you want to do the operation to
+//  (2) number of items wanting to remove
+console.log(counties.splice(2, 1));
+console.log(counties);
