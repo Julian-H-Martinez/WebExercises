@@ -252,13 +252,13 @@ answer;
 // if(answer === true){
 //     console.log("You said true!");
 // }
-
+/*
 if(answer === true){
     console.log("You said true!");
 }else{
     console.log("You said something else");
 }
-//
+
 var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
 if(answer === "YES"){
     console.log("You said YES!");
@@ -269,8 +269,41 @@ if(answer === "YES"){
 }else{
     console.log("You rebel, you!");
 }
+*/
 
+//  CONDITIONALS: switch
+/*
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
+if(answer === "YES"){
+    console.log("You said YES!");
+}else if(answer === "MAYBE"){
+    console.log("You said MAYBE. I don't know what to make of that.");
+}else if(answer === "NO"){
+    console.log("You said NO! :(");
+}else{
+    console.log("You rebel, you!");
+}
+ */
+/* ---CAN BE WRITTEN AS A switch AS FOLLOWS--- */
+//  BE SURE TO USE break; OTHERWISE A FALL THRU WILL OCCUR
+//  OPERATION WILL CONTINUE DOWN UNTIL A BREAK IS HIT
+//  LEAVE break; OUT IF YOU WANT TO CASCADE DOWN TO OTHER CONDITIONS
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
 
+switch (answer){
+    case "YES":
+        console.log("You said yes!");
+        break;
+    case "MAYBE":
+        console.log("You said MAYBE. I don't know what to make of that.");
+        break;
+    case "NO":
+        console.log("You said NO. :(");
+        break;
+    default:
+        console.log("You rebel, you!");
+        break;
+}
 
 
 
