@@ -305,7 +305,50 @@ switch (answer){
         break;
 }
 
+//  TERSE ifs
+//  FORMS TO MAKE if STATEMENTS SHORTER
+var cherub = "Cupid";
+//  charub = 'Some Other Guy';
 
+//  one liner - no curly braces
+//  rarely used
+if(cherub === "Cupid") console.log("Ouch, an arrow! Ooo, I'm in love!");
+
+if(cherub === "Cupid") console.log("Ouch, an arrow! Ooo, I'm in love!");
+else console.log("I feel nothing!");
+
+var wantForChristmas = "puppy",
+    gotForChristmas = "puppy",
+    cryAboutIt = false;
+
+if(wantForChristmas === gotForChristmas){
+    console.log("Yay! The little children are so pleased!");
+    cryAboutIt = false;
+}else{
+    console.log("Oh no! Sad Christmas!");
+    cryAboutIt = true;
+}
+
+//  condition that's a variable just by itself
+if(cryAboutIt){
+    console.log("Child says: WAAAAAAAAAAAAAAAAAAAAA!");
+}
+
+if(!cryAboutIt){
+    console.log("Child says: YAY!");
+}
+
+
+var animal = 'cat';
+//  animal = 'dog';
+
+//  ternary operator
+animal === 'cat'    //  conditional followed by ? (asking if true or false)
+    ? console.log("You will be a cat herder.")      //  if true this happens
+    : console.log("You will be a dog catcher.");    //  else false this happens
+
+//  ternary operator often used to set a variable
+var job = animal === "cat" ? "cat herder" : "dog catcher";
 
 
 
