@@ -189,21 +189,63 @@ var regex = /ever\.$/i;
 var one = 1, two = 2;
 
 // strict equality
-console.log(one === one);   //  true
-console.log(one === two);   //  false
+// console.log(one === one);   //  true
+// console.log(one === two);   //  false
 // strict inequality
-console.log(one !== one);   //  false
-console.log(one !== two);   //  true
+// console.log(one !== one);   //  false
+// console.log(one !== two);   //  true
 
 //  RELATIONAL COMPARISONS
-console.log(one < two);     //  true
-console.log(one <= two);    //  true
-console.log(one > two);     //  false
-console.log(one >= two);    //  false
-console.log(one < one);     //  false
-console.log(two > two);     //  false
-console.log(one <= one);    //  true
-console.log(two >= two);    //  true
+// console.log(one < two);     //  true
+// console.log(one <= two);    //  true
+// console.log(one > two);     //  false
+// console.log(one >= two);    //  false
+// console.log(one < one);     //  false
+// console.log(two > two);     //  false
+// console.log(one <= one);    //  true
+// console.log(two >= two);    //  true
+
+//  ARITHMETIC OPERATORS
+/*
+add +
+subtract -
+multiplication *
+division /
+modulus % divides first number by second and identify the remainder
+
+check if number is even ( num1 % num2 == 0)
+
+var counter = 0;
+INCREMENTING
+counter = counter + 1;
+counter += 1;   //  can increment by any number (even negative)
+counter ++;     //  only increments by 1
+
+DECREMENTING
+counter = counter - 1;
+counter -= 1;   //  can decrement by any number (even negative)
+counter --;     //  only decrements by 1
+
+Can be incremented and decremented by multiplication (*) and division (/) respectively
+ */
+
+//  MAIN LOGICAL OPERATORS
+/* AND(&&) and OR(||) */
+var animal1 = 'monkey';
+var animal2 = 'bear';
+var animal3 = 'tiger';
+
+//  every condition needs to be true in order to return true
+// console.log(animal1 === 'monkey' && animal2 === 'bear');    //  true
+// console.log(animal1 === 'ape' && animal2 === 'bear');       //  false
+// console.log(animal1 === 'ape' || animal2 === 'bear');       //  true
+// console.log(animal1 === 'ape' || animal2 === 'turtle');     //  false
+// console.log(animal1 === 'monkey' && animal2 === 'bear' && animal3 === 'tiger');     //  true
+// console.log(animal1 === 'monkey' && animal2 === 'bear' && animal3 === 'tiger');     //  true
+// console.log(animal1 === 'monkey' || animal2 === 'bear' && animal3 === 'tiger');     //  true
+//  ! inverts the expressions outcome true is now false and false is now true
+
+
 
 
 
