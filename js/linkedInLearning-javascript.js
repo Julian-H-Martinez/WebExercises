@@ -245,7 +245,30 @@ var animal3 = 'tiger';
 // console.log(animal1 === 'monkey' || animal2 === 'bear' && animal3 === 'tiger');     //  true
 //  ! inverts the expressions outcome true is now false and false is now true
 
+//  CONDITIONALS: if
+var answer = window.confirm("Click OK, get true. Click cancel, get false.");
+answer;
 
+// if(answer === true){
+//     console.log("You said true!");
+// }
+
+if(answer === true){
+    console.log("You said true!");
+}else{
+    console.log("You said something else");
+}
+//
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
+if(answer === "YES"){
+    console.log("You said YES!");
+}else if(answer === "MAYBE"){
+    console.log("You said MAYBE. I don't know what to make of that.");
+}else if(answer === "NO"){
+    console.log("You said NO! :(");
+}else{
+    console.log("You rebel, you!");
+}
 
 
 
