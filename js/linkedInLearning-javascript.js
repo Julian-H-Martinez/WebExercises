@@ -178,12 +178,32 @@ var string4 = 'This is the Sherman on the Mount.';
 var regex = /ever\.$/i;
 
 //  .test method to test regex of string for pattern set with variable regex
-console.log(regex.test(string1));
-console.log(regex.test(string2));
-console.log(regex.test(string3));
-console.log(regex.test(string4));
+// console.log(regex.test(string1));
+// console.log(regex.test(string2));
+// console.log(regex.test(string3));
+// console.log(regex.test(string4));
 
+/* ---OPERATORS AND CONTROL STRUCTURES--- */
 
+//  SIMPLE COMPARISONS
+var one = 1, two = 2;
+
+// strict equality
+console.log(one === one);   //  true
+console.log(one === two);   //  false
+// strict inequality
+console.log(one !== one);   //  false
+console.log(one !== two);   //  true
+
+//  RELATIONAL COMPARISONS
+console.log(one < two);     //  true
+console.log(one <= two);    //  true
+console.log(one > two);     //  false
+console.log(one >= two);    //  false
+console.log(one < one);     //  false
+console.log(two > two);     //  false
+console.log(one <= one);    //  true
+console.log(two >= two);    //  true
 
 
 
