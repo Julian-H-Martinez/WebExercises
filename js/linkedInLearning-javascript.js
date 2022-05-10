@@ -178,10 +178,516 @@ var string4 = 'This is the Sherman on the Mount.';
 var regex = /ever\.$/i;
 
 //  .test method to test regex of string for pattern set with variable regex
-console.log(regex.test(string1));
-console.log(regex.test(string2));
-console.log(regex.test(string3));
-console.log(regex.test(string4));
+// console.log(regex.test(string1));
+// console.log(regex.test(string2));
+// console.log(regex.test(string3));
+// console.log(regex.test(string4));
+
+/* ---OPERATORS AND CONTROL STRUCTURES--- */
+
+//  SIMPLE COMPARISONS
+var one = 1, two = 2;
+
+//  strict equality (===) compares values and data types
+//  equality (==) compares only values
+
+// console.log(one === one);   //  true
+// console.log(one === two);   //  false
+// strict inequality
+// console.log(one !== one);   //  false
+// console.log(one !== two);   //  true
+
+//  RELATIONAL COMPARISONS
+// console.log(one < two);     //  true
+// console.log(one <= two);    //  true
+// console.log(one > two);     //  false
+// console.log(one >= two);    //  false
+// console.log(one < one);     //  false
+// console.log(two > two);     //  false
+// console.log(one <= one);    //  true
+// console.log(two >= two);    //  true
+
+//  ARITHMETIC OPERATORS
+/*
+add +
+subtract -
+multiplication *
+division /
+modulus % divides first number by second and identify the remainder
+
+check if number is even ( num1 % num2 == 0)
+
+var counter = 0;
+INCREMENTING
+counter = counter + 1;
+counter += 1;   //  can increment by any number (even negative)
+counter ++;     //  only increments by 1
+
+DECREMENTING
+counter = counter - 1;
+counter -= 1;   //  can decrement by any number (even negative)
+counter --;     //  only decrements by 1
+
+Can be incremented and decremented by multiplication (*) and division (/) respectively
+ */
+
+//  MAIN LOGICAL OPERATORS
+/* AND(&&) and OR(||) */
+var animal1 = 'monkey';
+var animal2 = 'bear';
+var animal3 = 'tiger';
+
+//  every condition needs to be true in order to return true
+// console.log(animal1 === 'monkey' && animal2 === 'bear');    //  true
+// console.log(animal1 === 'ape' && animal2 === 'bear');       //  false
+// console.log(animal1 === 'ape' || animal2 === 'bear');       //  true
+// console.log(animal1 === 'ape' || animal2 === 'turtle');     //  false
+// console.log(animal1 === 'monkey' && animal2 === 'bear' && animal3 === 'tiger');     //  true
+// console.log(animal1 === 'monkey' && animal2 === 'bear' && animal3 === 'tiger');     //  true
+// console.log(animal1 === 'monkey' || animal2 === 'bear' && animal3 === 'tiger');     //  true
+//  ! inverts the expressions outcome true is now false and false is now true
+
+//  CONDITIONALS: if
+var answer = window.confirm("Click OK, get true. Click cancel, get false.");
+answer;
+
+// if(answer === true){
+//     console.log("You said true!");
+// }
+/*
+if(answer === true){
+    console.log("You said true!");
+}else{
+    console.log("You said something else");
+}
+
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
+if(answer === "YES"){
+    console.log("You said YES!");
+}else if(answer === "MAYBE"){
+    console.log("You said MAYBE. I don't know what to make of that.");
+}else if(answer === "NO"){
+    console.log("You said NO! :(");
+}else{
+    console.log("You rebel, you!");
+}
+*/
+
+//  CONDITIONALS: switch
+/*
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
+if(answer === "YES"){
+    console.log("You said YES!");
+}else if(answer === "MAYBE"){
+    console.log("You said MAYBE. I don't know what to make of that.");
+}else if(answer === "NO"){
+    console.log("You said NO! :(");
+}else{
+    console.log("You rebel, you!");
+}
+ */
+/* ---CAN BE WRITTEN AS A switch AS FOLLOWS--- */
+//  BE SURE TO USE break; OTHERWISE A FALL THRU WILL OCCUR
+//  OPERATION WILL CONTINUE DOWN UNTIL A BREAK IS HIT
+//  LEAVE break; OUT IF YOU WANT TO CASCADE DOWN TO OTHER CONDITIONS
+var answer = window.prompt("Type YES, NO, or MAYBE. Then click OK.");
+
+switch (answer){
+    case "YES":
+        console.log("You said yes!");
+        break;
+    case "MAYBE":
+        console.log("You said MAYBE. I don't know what to make of that.");
+        break;
+    case "NO":
+        console.log("You said NO. :(");
+        break;
+    default:
+        console.log("You rebel, you!");
+        break;
+}
+
+//  TERSE ifs
+//  FORMS TO MAKE if STATEMENTS SHORTER
+var cherub = "Cupid";
+//  charub = 'Some Other Guy';
+
+//  one liner - no curly braces
+//  rarely used
+if(cherub === "Cupid") console.log("Ouch, an arrow! Ooo, I'm in love!");
+
+if(cherub === "Cupid") console.log("Ouch, an arrow! Ooo, I'm in love!");
+else console.log("I feel nothing!");
+
+var wantForChristmas = "puppy",
+    gotForChristmas = "puppy",
+    cryAboutIt = false;
+
+if(wantForChristmas === gotForChristmas){
+    console.log("Yay! The little children are so pleased!");
+    cryAboutIt = false;
+}else{
+    console.log("Oh no! Sad Christmas!");
+    cryAboutIt = true;
+}
+
+//  condition that's a variable just by itself
+if(cryAboutIt){
+    console.log("Child says: WAAAAAAAAAAAAAAAAAAAAA!");
+}
+
+if(!cryAboutIt){
+    console.log("Child says: YAY!");
+}
+
+
+var animal = 'cat';
+//  animal = 'dog';
+
+//  ternary operator
+animal === 'cat'    //  conditional followed by ? (asking if true or false)
+    ? console.log("You will be a cat herder.")      //  if true this happens
+    : console.log("You will be a dog catcher.");    //  else false this happens
+
+//  ternary operator often used to set a variable
+var job = animal === "cat" ? "cat herder" : "dog catcher";
+
+
+//  TYPE CHECKING
+//  javascript is loosely typed
+
+var thing = 12;
+thing = "twelve";
+
+console.log(typeof thing);
+//  in js, arrays are objects with the property of length
+//  to check if typeof is really an array
+thing = {};
+console.log(typeof thing === "object" && thing.hasOwnProperty("length"));   //  false
+thing = [];
+console.log(typeof thing === "object" && thing.hasOwnProperty("length"));   //  true
+
+//  NaN is not a way to check if variable is a number
+console.log(typeof NaN);    //  number will be returned
+console.log(Number.isNaN());    //  correct way to check if a variable is/is not a number
+console.log(typeof null);   //  returns an object
+thing = null;
+console.log(thing === null)//  strict equality operator is needed to check if variable is null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
