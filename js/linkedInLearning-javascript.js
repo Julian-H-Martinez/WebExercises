@@ -188,7 +188,9 @@ var regex = /ever\.$/i;
 //  SIMPLE COMPARISONS
 var one = 1, two = 2;
 
-// strict equality
+//  strict equality (===) compares values and data types
+//  equality (==) compares only values
+
 // console.log(one === one);   //  true
 // console.log(one === two);   //  false
 // strict inequality
@@ -351,7 +353,26 @@ animal === 'cat'    //  conditional followed by ? (asking if true or false)
 var job = animal === "cat" ? "cat herder" : "dog catcher";
 
 
+//  TYPE CHECKING
+//  javascript is loosely typed
 
+var thing = 12;
+thing = "twelve";
+
+console.log(typeof thing);
+//  in js, arrays are objects with the property of length
+//  to check if typeof is really an array
+thing = {};
+console.log(typeof thing === "object" && thing.hasOwnProperty("length"));   //  false
+thing = [];
+console.log(typeof thing === "object" && thing.hasOwnProperty("length"));   //  true
+
+//  NaN is not a way to check if variable is a number
+console.log(typeof NaN);    //  number will be returned
+console.log(Number.isNaN());    //  correct way to check if a variable is/is not a number
+console.log(typeof null);   //  returns an object
+thing = null;
+console.log(thing === null)//  strict equality operator is needed to check if variable is null
 
 
 
