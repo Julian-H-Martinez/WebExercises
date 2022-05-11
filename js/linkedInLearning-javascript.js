@@ -436,6 +436,61 @@ for (var p in pages){
     }
 }
 
+//  WHILE LOOPS
+/*
+- WHILE LOOPS ARE USED WHEN YOU DON'T KNOW HOW MANY TIMES TO LOOP OVER SOMETHING
+- DANGER WITH WHILE LOOPS - IT'S EASY TO CREATE AN INFINITE LOOP (DOES NOT BREAK OR STOP)
+ */
+//  for comparison
+/*
+//  first - set initialization var i = 0; this is where to start
+//  second - setup ending condition i < 10; this is when loop will end
+//  third - how to get from start to end i++ -> INCREMENT || DECREMENT by 1 or what's being asked
+
+for (var i = 0; i < 10; i++){
+    console.log(i);
+}
+ */
+
+var i = 0;  //  initializing variable (first)
+
+while (i < 10){     //  keyword 'while' followed by terminating/ending condition (second)
+    //  do something
+    console.log(i + "... This will go until we hit 10!");
+    //
+    i += 1;    //  reaching endpoint by INCREMENT || DECREMENT (third)
+}
+
+var myArray = [true, true, true, false, true, true];
+
+var myItem = null;
+
+while(myItem !== false){
+    console.log(
+        "myArray has "
+        + myArray.length
+        + " items now. This loop will go until we pop a false!"
+    );
+    myItem = myArray.pop();
+}
+
+var counter = 1;
+while(true){
+    console.log(counter);
+    counter++;
+    break;  //  comment out this break statement to make this loop go forever and potentially lock up your web browser
+}
+
+myItem = false;
+//  do while loop ensures that something is executed at least once
+do{
+    console.log(
+        "myArray has " +
+        myArray.length +
+        " items now. This loop will go until we pop a false."
+    );
+    myItem = myArray.pop();
+}while(myItem !== false);
 
 
 
