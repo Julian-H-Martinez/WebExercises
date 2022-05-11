@@ -513,6 +513,7 @@ closing curly brace '}'
 
 function someName(){ // do something // }
  */
+//  BASIC FUNCTIONS
 console.log('Arf');
 console.log('Woof');
 console.log('Meow');
@@ -527,9 +528,41 @@ function speak(){
 
 speak();
 
+//  ARGUMENTS IN FUNCTIONS
+//  modifying data
+function fuddify(speech){
+    //  if it's not a string, return an error message
+    //  typeof allows us to ensure argument is a string
+    if(typeof speech !== 'string'){
+        console.error("Nice twy, wabbit!");
+        return;
+    }
 
+    //  otherwise, make it sound like Elmer Fudd
+    //  .replace using regex to replace with given value 'w' 'W'
+    speech = speech.replace(/r/g, "w");
+    speech = speech.replace(/R/g, "W");
 
+    return speech;
+}
 
+var griping = fuddify("Really trying my nerves silly Rabbit!!!");
+
+function isEven(num){
+    if(num % 2 === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//  when only evaluating to true or false you can compress the above code with below
+function isEven(num){
+    return num % 2 === 0;
+}
+
+isEven(44);
+isEven(45);
 
 
 
