@@ -500,6 +500,33 @@ do{
 }while(myItem !== false);
 
 
+/* ---FUNCTIONS--- */
+/*
+//  methods of objects are functions
+//  to create function need:
+keyword 'function' followed by
+'nameOfFunction' followed by
+parenthesis () for parameter(s) followed by
+open curly brace '{' followed by
+doing something followed by
+closing curly brace '}'
+
+function someName(){ // do something // }
+ */
+console.log('Arf');
+console.log('Woof');
+console.log('Meow');
+console.log('Moooooo');
+
+function speak(){
+    console.log('Arf');
+    console.log('Woof');
+    console.log('Meow');
+    console.log('Moooooo');
+}
+
+speak();
+
 
 
 
