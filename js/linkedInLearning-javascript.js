@@ -375,11 +375,18 @@ thing = null;
 console.log(thing === null)//  strict equality operator is needed to check if variable is null
 
 /* ---ITERATING WITH LOOPS--- */
-//  FOR LOOPS: SEQUENTIAL
-
+/*
 //  first - set initialization var i = 0; this is where to start
 //  second - setup ending condition i < 10; this is when loop will end
 //  third - how to get from start to end i++ -> INCREMENT || DECREMENT by 1 or what's being asked
+
+//  while loop preserves order when iterating over an object, unlike the 'for' loop
+
+//  objects and enumerative 'for' loops cannot guarantee order preservation
+ */
+
+//  FOR LOOPS: SEQUENTIAL
+
 for(var i = 0; i < 10; i++){
     console.log("Value of i is: " + i);
 }
@@ -393,7 +400,7 @@ var pageNames = [
     "Blog"
 ];
 
-/* notice repeating pageNames[i] - use variable in place to better identify */
+//  notice repeating pageNames[i] - use variable in place to better identify //
 // for(i=0; i<pageNames.length; i++){
 //     if(document.title === pageNames[i]){
 //         console.log("We ARE here: " + pageNames[i]);
