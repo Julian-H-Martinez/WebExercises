@@ -413,6 +413,28 @@ for(i=0; i<pageNames.length; i++){
     }
 }
 
+//  FOR LOOPS: ENUMERATIVE
+//  CAN BE USED ON ARRAYS AND OBJECTS
+//  order is not guaranteed when using a 'for in' loop
+//  initialize variable like sequential loop followed by
+//  keyword 'in' followed by
+//  the array/object to loop through
+for(var p in pageNames){
+    console.log(p, pageNames[p]);
+}
+
+var pages = {
+    first: "Home",
+    second: "About Us",
+    third: "Contact Us",
+    fourth: "JavaScript Playground",
+    fifth: "Blog"
+};
+for (var p in pages){
+    if(pages.hasOwnProperty(p)){
+        console.log(p + ": ", pages[p]);
+    }
+}
 
 
 
