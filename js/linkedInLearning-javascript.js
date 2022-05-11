@@ -374,8 +374,44 @@ console.log(typeof null);   //  returns an object
 thing = null;
 console.log(thing === null)//  strict equality operator is needed to check if variable is null
 
+/* ---ITERATING WITH LOOPS--- */
+//  FOR LOOPS: SEQUENTIAL
 
+//  first - set initialization var i = 0; this is where to start
+//  second - setup ending condition i < 10; this is when loop will end
+//  third - how to get from start to end i++ -> INCREMENT || DECREMENT by 1 or what's being asked
+for(var i = 0; i < 10; i++){
+    console.log("Value of i is: " + i);
+}
 
+var pageNames = [
+    "Home",
+    "About Us",
+    "Contact Us",
+    "JavaScript Playground",
+    "News",
+    "Blog"
+];
+
+/* notice repeating pageNames[i] - use variable in place to better identify */
+// for(i=0; i<pageNames.length; i++){
+//     if(document.title === pageNames[i]){
+//         console.log("We ARE here: " + pageNames[i]);
+//     }else{
+//         console.log("We are NOT here: " + pageNames[i]);
+//     }
+// }
+
+for(i=0; i<pageNames.length; i++){
+    var currentPageTitle = pageNames[i];
+
+    if(document.title === currentPageTitle){
+        console.log("We ARE here: " + currentPageTitle);
+        break;  //  add break to get out of loop
+    }else{
+        console.log("We are NOT here: " + currentPageTitle);
+    }
+}
 
 
 
