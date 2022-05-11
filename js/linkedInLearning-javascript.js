@@ -695,7 +695,37 @@ function transmogrifierCopy(calvin){
     };
 }
 
+//  FUNCTIONS ARE OBJECTS
+//  functions are first class citizens in js
+//  objects with power to be invoked
+//  can pass functions into other functions or set as a variable
+//  which makes the function an 'anonymous function'
 
+function speakSomething(what) {
+    what = what || "Speaking!";
+
+    for (var i = 0; i < 10; i += 1) {
+        console.log(what);
+    }
+}
+
+var speakSomething = function(what) {
+    what = what || "Speaking!";
+
+    for (var i = 0; i < 10; i += 1) {
+        console.log(what);
+    }
+};
+
+window.setTimeout(speakSomething, 5000);
+
+var obj = {
+    sayHello: function() {
+        console.log("Hello, " + arguments[0]);
+    }
+};
+
+obj.sayHello();
 
 
 
