@@ -823,6 +823,7 @@ doubleIt = number => (number *= 2);
 - some steps can be run in a way that doesn't block others
 - synchronous is step by step with previous step blocking next step
 - asynchronous comes from needing to load data from somewhere most likely the internet
+- asynchronous has potential to make some applications more efficient
  */
 
 //  PROMISES, ASYNC, AND AWAIT
@@ -851,6 +852,7 @@ jQuery.get("https://httpbin.org/get", function(response) {
 });
 
 /* Promises */
+//  one benefit of using promises is that you can avoid nested callbacks
 
 // One Promise
 axios.get("https://httpbin.org/get")
@@ -896,9 +898,49 @@ async function getLotsOfThings() {
     // Now I have lots of data
 }
 
+//  OBJECT-ORIENTED JAVASCRIPT: PROTOTYPES AND CLASSES
+/*
+HOW DO OBJECTS WORK?
+Prototypal Inheritance -> every object has a link to a parent object from which it inherited some data and functions
+These links are called double underscore proto internally and comprise what's called the prototype chain
+_prototype_ -> handles inheritance in objects for js
+*/
 
+//  This is how you add a method to an object using its prototype, which makes it available to all objects that use that prototype wherever they are down the prototype chain.
+/*
+Cake.prototype.bake=function(temp, minutes){
+    //  Bake a cake at a particular temperature
+    //  for a number of minutes
+}
+ */
 
+//  JARGON: STRONG VS LOOSE TYPING
+/*
+javascript is loosely typed - why?
+loosely typed: flexible
+being able to reuse variables however makes js flexible but more prone to bugs and errors
+strongly typed langs variables know about and enforce what kind of data can be stored
 
+TypeScript is a popular solution for the strong vs loose debate
+TypeScript is JS with some extra features added on, stronger typing
+many large js projects and frameworks write original code in TypeScript and transform to JS to run on web
+ */
+
+//  MODERN JAVASCRIPT TOOLING
+/*
+webpack - https://webpack.js.org
+rollup.js - https://rollupjs.org/guide/en
+
+Package Manager
+downloads and manages installation of JS libraries
+npm - https://www.npmjs.com
+yarn - https://yarnpkg.com/en/
+
+Transpiler || Compiler
+babel - https://babeljs.io - converts ECMA6 to 5
+typescript - https://www.typescriptlang.org - converts into vanilla JS
+EITHER OF THESE CAN BE INTEGRATED WITH WEBPACK OR ROLLUP PROVIDING A ONE STOP SHOP
+ */
 
 
 
