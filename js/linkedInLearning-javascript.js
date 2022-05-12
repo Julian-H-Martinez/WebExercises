@@ -696,10 +696,17 @@ function transmogrifierCopy(calvin){
 }
 
 //  FUNCTIONS ARE OBJECTS
-//  functions are first class citizens in js
-//  objects with power to be invoked
-//  can pass functions into other functions or set as a variable
-//  which makes the function an 'anonymous function'
+/*
+- functions are first class citizens in js
+- objects with power to be invoked
+- can pass functions into other functions or set as a variable
+- which makes the function an 'anonymous function'
+- A function does not need inputs nor does it need to have a body. Something like 'function myFunction() {}' is perfectly valid.
+- Functions can be passed around as values
+- function will exit once it hits return command
+- multiple returns within a function will only result in the first return working; others will not be touched
+ */
+
 
 function speakSomething(what) {
     what = what || "Speaking!";
@@ -735,7 +742,8 @@ scope = where is that variable?;
 - GLOBAL - accessible anywhere
 - LOCAL - accessible in a more limited capacity
 - avoid creating GLOBAL variables which is considered HARMFUL
-var|let|const keeps variable in local scope
+- var|let|const keeps variable in local scope
+- to make sure your variables are local, use keyword 'var' || 'let' || 'const'
 without var|let|const variable is considered GLOBAL
  */
 
@@ -771,6 +779,7 @@ function doubleIt(num) {
 //  JARGON: CALLBACK FUNCTIONS
 /*
 - a function that's passed as an argument into another fn and executed in that fn
+- Callback functions are an integral part of asynchronous programming
 - can be rewritten as an arrow function
 - JS Arrays map method takes a callback that has one specified parameter
 - Array .map() used a lot in js frameworks like React
