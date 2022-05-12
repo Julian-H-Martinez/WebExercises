@@ -374,23 +374,399 @@ console.log(typeof null);   //  returns an object
 thing = null;
 console.log(thing === null)//  strict equality operator is needed to check if variable is null
 
+/* ---ITERATING WITH LOOPS--- */
+/*
+//  first - set initialization var i = 0; this is where to start
+//  second - setup ending condition i < 10; this is when loop will end
+//  third - how to get from start to end i++ -> INCREMENT || DECREMENT by 1 or what's being asked
+
+//  while loop preserves order when iterating over an object, unlike the 'for' loop
+
+//  objects and enumerative 'for' loops cannot guarantee order preservation
+ */
+
+//  FOR LOOPS: SEQUENTIAL
+
+for(var i = 0; i < 10; i++){
+    console.log("Value of i is: " + i);
+}
+
+var pageNames = [
+    "Home",
+    "About Us",
+    "Contact Us",
+    "JavaScript Playground",
+    "News",
+    "Blog"
+];
+
+//  notice repeating pageNames[i] - use variable in place to better identify //
+// for(i=0; i<pageNames.length; i++){
+//     if(document.title === pageNames[i]){
+//         console.log("We ARE here: " + pageNames[i]);
+//     }else{
+//         console.log("We are NOT here: " + pageNames[i]);
+//     }
+// }
+
+for(i=0; i<pageNames.length; i++){
+    var currentPageTitle = pageNames[i];
+
+    if(document.title === currentPageTitle){
+        console.log("We ARE here: " + currentPageTitle);
+        break;  //  add break to get out of loop
+    }else{
+        console.log("We are NOT here: " + currentPageTitle);
+    }
+}
+
+//  FOR LOOPS: ENUMERATIVE
+//  CAN BE USED ON ARRAYS AND OBJECTS
+//  order is not guaranteed when using a 'for in' loop
+//  initialize variable like sequential loop followed by
+//  keyword 'in' followed by
+//  the array/object to loop through
+for(var p in pageNames){
+    console.log(p, pageNames[p]);
+}
+
+var pages = {
+    first: "Home",
+    second: "About Us",
+    third: "Contact Us",
+    fourth: "JavaScript Playground",
+    fifth: "Blog"
+};
+for (var p in pages){
+    if(pages.hasOwnProperty(p)){
+        console.log(p + ": ", pages[p]);
+    }
+}
+
+//  WHILE LOOPS
+/*
+- WHILE LOOPS ARE USED WHEN YOU DON'T KNOW HOW MANY TIMES TO LOOP OVER SOMETHING
+- DANGER WITH WHILE LOOPS - IT'S EASY TO CREATE AN INFINITE LOOP (DOES NOT BREAK OR STOP)
+ */
+//  for comparison
+/*
+//  first - set initialization var i = 0; this is where to start
+//  second - setup ending condition i < 10; this is when loop will end
+//  third - how to get from start to end i++ -> INCREMENT || DECREMENT by 1 or what's being asked
+
+for (var i = 0; i < 10; i++){
+    console.log(i);
+}
+ */
+
+var i = 0;  //  initializing variable (first)
+
+while (i < 10){     //  keyword 'while' followed by terminating/ending condition (second)
+    //  do something
+    console.log(i + "... This will go until we hit 10!");
+    //
+    i += 1;    //  reaching endpoint by INCREMENT || DECREMENT (third)
+}
+
+var myArray = [true, true, true, false, true, true];
+
+var myItem = null;
+
+while(myItem !== false){
+    console.log(
+        "myArray has "
+        + myArray.length
+        + " items now. This loop will go until we pop a false!"
+    );
+    myItem = myArray.pop();
+}
+
+var counter = 1;
+while(true){
+    console.log(counter);
+    counter++;
+    break;  //  comment out this break statement to make this loop go forever and potentially lock up your web browser
+}
+
+myItem = false;
+//  do while loop ensures that something is executed at least once
+do{
+    console.log(
+        "myArray has " +
+        myArray.length +
+        " items now. This loop will go until we pop a false."
+    );
+    myItem = myArray.pop();
+}while(myItem !== false);
 
 
+/* ---FUNCTIONS--- */
+/*
+//  methods of objects are functions
+//  to create function need:
+keyword 'function' followed by
+'nameOfFunction' followed by
+parenthesis () for parameter(s) followed by
+open curly brace '{' followed by
+doing something followed by
+closing curly brace '}'
+
+function someName(){ // do something // }
+
+functions can have as many arguments as you want
+
+when creating a function it's good to ensure that typeof argument being passed is what's required
 
 
+ */
+//  BASIC FUNCTIONS
+console.log('Arf');
+console.log('Woof');
+console.log('Meow');
+console.log('Moooooo');
 
+function speak(){
+    console.log('Arf');
+    console.log('Woof');
+    console.log('Meow');
+    console.log('Moooooo');
+}
 
+speak();
 
+//  ARGUMENTS IN FUNCTIONS
+//  modifying data
+function fuddify(speech){
+    //  if it's not a string, return an error message
+    //  typeof allows us to ensure argument is a string
+    if(typeof speech !== 'string'){
+        console.error("Nice twy, wabbit!");
+        return;
+    }
 
+    //  otherwise, make it sound like Elmer Fudd
+    //  .replace using regex to replace with given value 'w' 'W'
+    speech = speech.replace(/r/g, "w");
+    speech = speech.replace(/R/g, "W");
 
+    return speech;
+}
 
+var griping = fuddify("Really trying my nerves silly Rabbit!!!");
 
+function isEven(num){
+    if(num % 2 === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
+//  when only evaluating to true or false you can compress the above code with below
+function isEven(num){
+    return num % 2 === 0;
+}
 
+isEven(44);
+isEven(45);
 
+//  MORE ON ARGUMENTS
 
+function speakSomething(what, howMany){
+    //  this pattern works nicely for default values
+    //  check if the argument is undefined, and if it is, provide a default value
+    var what = (typeof what !== 'undefined') ? what : "Default speech";
+    var howMany = (typeof howMany !== 'undefined') ? howMany : 10;
 
+    //  shorter version that could get tripped up by truthiness
+    /*
+    what = what || 'Default speech';
+    howMany = howMany || 10;
+     */
 
+    for(var i=0; i < howMany; i += 1){
+        console.log(what + " (" + i + ")");
+    }
+}
+
+function addingMachine(){
+    var total = 0;
+
+    //  keyword arguments is an object every function should know about
+    //  array like object that provides some of the array tools
+
+    for(var i = 0; i < arguments.length; i += 1){
+        //  grab the next number
+        var number = arguments[i];
+
+        //  check if the argument is a number
+        //  if so, add it to the running total
+        if(typeof number === 'number'){
+            total += number;
+        }
+    }
+
+    //  done - return total
+    return total;
+}
+
+//  OBJECTS, REFERENCES, AND FUNCTIONS
+
+var calvin = {
+    name: "Calvin",
+    bestFriend: "Hobbes",
+    form: "human boy"
+};
+
+//  you can also pass an object to a function
+//  because objects are passed by reference, the argument will be modified
+//  function below will modify original object and not create a copy
+function transmogrifier(calvin){
+    if(typeof calvin !== 'object'){
+        console.error("argument is of the wrong type");
+        return;
+    }
+
+    //  generate a random number between 1 and 5
+    var randomNumber = Math.floor((Math.random()*5) + 1);
+
+    switch(randomNumber){
+        case 1:
+            calvin.form = 'tyrannosaurus';
+            break;
+        case 2:
+            calvin.form = 'grey wolf';
+            break;
+        case 3:
+            calvin.form = 'bengal tiger';
+            break;
+        case 4:
+            calvin.form = 'grizzly bear';
+            break;
+        case 5:
+            calvin.form = 'canary';
+            break;
+        default:
+            //  he stays human
+            calvin.form = 'human boy';
+            break;
+    }
+}
+
+function transmogrifierCopy(calvin){
+    if(typeof calvin !== 'object'){
+        console.log("argument is of the wrong type");
+        return;
+    }
+
+    //  generate a random number between 1 and 5
+    var randomNumber = Math.floor(Math.random()*5) + 1;
+    //  saving form as a variable so that we can modify the newForm and not original
+    var newForm = calvin.form;  //  by default, do not change
+
+    switch(randomNumber){
+        case 1:
+            newForm = 'tyrannosaurus';
+            break;
+        case 2:
+            newForm = 'grey wolf';
+            break;
+        case 3:
+            newForm = 'bengal tiger';
+            break;
+        case 4:
+            newForm = 'grizzly bear';
+            break;
+        case 5:
+            newForm = 'canary';
+            break;
+        default:
+            //  he stays human
+            newForm = 'human boy';
+            break;
+    }
+
+    //  return a new object that's just like calvin, but transmogrified
+    //  new object without modifying the old one
+    return {
+        name: calvin.name,
+        bestFriend: calvin.bestFriend,
+        form: newForm
+    };
+}
+
+//  FUNCTIONS ARE OBJECTS
+//  functions are first class citizens in js
+//  objects with power to be invoked
+//  can pass functions into other functions or set as a variable
+//  which makes the function an 'anonymous function'
+
+function speakSomething(what) {
+    what = what || "Speaking!";
+
+    for (var i = 0; i < 10; i += 1) {
+        console.log(what);
+    }
+}
+
+var speakSomething = function(what) {
+    what = what || "Speaking!";
+
+    for (var i = 0; i < 10; i += 1) {
+        console.log(what);
+    }
+};
+
+window.setTimeout(speakSomething, 5000);
+
+var obj = {
+    sayHello: function() {
+        console.log("Hello, " + arguments[0]);
+    }
+};
+
+obj.sayHello();
+
+//  JARGON: SCOPE IN JAVASCRIPT
+/*
+scope = where is that variable?;
+- refers to where variable is defined and what parts of our code can access the variable
+- differentiate between GLOBAL vs LOCAL
+- GLOBAL - accessible anywhere
+- LOCAL - accessible in a more limited capacity
+- avoid creating GLOBAL variables which is considered HARMFUL
+var|let|const keeps variable in local scope
+without var|let|const variable is considered GLOBAL
+ */
+
+//  VARIABLE SCOPE IN FUNCTIONS
+
+var myNum = 32;
+var myResult = "Success!";
+
+function randomizer(limit) {
+    var randomNumber = Math.floor(Math.random() * limit);
+
+    var myNum = randomNumber;
+
+    console.log("myNum is", myNum);
+    console.log("Global myNum is", window.myNum);
+
+    console.log("Our result is", myResult);
+
+    return myNum;
+}
+
+randomizer(10);
+
+function doubleIt(num) {
+    var myNum = num * 2;
+
+    return myNum;
+}
+
+// More info:
+// https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Functions#Function_scope
 
 
 
