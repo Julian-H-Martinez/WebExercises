@@ -768,8 +768,43 @@ function doubleIt(num) {
 // More info:
 // https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Functions#Function_scope
 
+//  JARGON: CALLBACK FUNCTIONS
+/*
+- a function that's passed as an argument into another fn and executed in that fn
+- can be rewritten as an arrow function
+- JS Arrays map method takes a callback that has one specified parameter
+- Array .map() used a lot in js frameworks like React
+- .forEach() method is good if you are wanting to iterate through entire array
+- .forEach() does not return anything, iterates through array passing each value as argument in callback
+ */
 
+function doubleIt(number) {
+    return (number *= 2);
+}
 
+var myNumbers = [1, 2, 3, 4, 5];
+
+var myDoubles = myNumbers.map(doubleIt);
+
+myNumbers.forEach(function(number) {
+    console.log("My array contains", number);
+});
+
+//  doubleIt function rewritten as an
+//  ARROW FUNCTION
+/*
+doubleIt -> name of function
+= number -> parameter(s) / if multiple params '()' are needed
+=> -> ARROW followed by what function does
+(number *= 2); -> what function returns / notice no '{}' because of simplicity of return
+'()' are also optional but makes things a little clearer
+if simple then '{}' can be left off, otherwise '{}' are needed
+ */
+doubleIt = number => (number *= 2);
+
+// https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 
 
