@@ -727,8 +727,46 @@ var obj = {
 
 obj.sayHello();
 
+//  JARGON: SCOPE IN JAVASCRIPT
+/*
+scope = where is that variable?;
+- refers to where variable is defined and what parts of our code can access the variable
+- differentiate between GLOBAL vs LOCAL
+- GLOBAL - accessible anywhere
+- LOCAL - accessible in a more limited capacity
+- avoid creating GLOBAL variables which is considered HARMFUL
+var|let|const keeps variable in local scope
+without var|let|const variable is considered GLOBAL
+ */
 
+//  VARIABLE SCOPE IN FUNCTIONS
 
+var myNum = 32;
+var myResult = "Success!";
+
+function randomizer(limit) {
+    var randomNumber = Math.floor(Math.random() * limit);
+
+    var myNum = randomNumber;
+
+    console.log("myNum is", myNum);
+    console.log("Global myNum is", window.myNum);
+
+    console.log("Our result is", myResult);
+
+    return myNum;
+}
+
+randomizer(10);
+
+function doubleIt(num) {
+    var myNum = num * 2;
+
+    return myNum;
+}
+
+// More info:
+// https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Functions#Function_scope
 
 
 
